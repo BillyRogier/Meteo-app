@@ -1,9 +1,9 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 
-const WeatherItem = ({ item, index }) => {
+const WeatherItem = ({ item }) => {
   return (
-    <View key={index} style={styles.forecastItem}>
+    <View style={styles.forecastItem}>
       <Image
         source={{
           uri: `https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`,

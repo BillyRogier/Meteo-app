@@ -12,7 +12,7 @@ const WeatherForecast = ({ forecastWeatherData }) => {
         style={styles.scrollView}
       >
         {forecastWeatherData.map((item, index) => (
-          <WeatherItem item={item} index={index} />
+          <WeatherItem item={item} key={index} />
         ))}
       </ScrollView>
     </View>

@@ -38,6 +38,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#F2E4D8",
     width: "100%",
     height: "100%",
+    justifyContent: "center",
+    alignContent: "center",
   },
   weatherContainer: {
     width: "100%",

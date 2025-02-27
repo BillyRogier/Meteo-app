@@ -4,6 +4,12 @@ import { Image, StyleSheet, Text, View } from "react-native";
 const WeatherItem = ({ item }) => {
   return (
     <View style={styles.forecastItem}>
+      <Text style={styles.forecastTime}>
+        {new Date(item.dt * 1000).toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        })}
+      </Text>
       <Image
         source={{
           uri: `https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`,
@@ -11,12 +17,6 @@ const WeatherItem = ({ item }) => {
         style={styles.forecastIcon}
       />
       <Text style={styles.forecastTemp}>{Math.round(item.main.temp)}°C</Text>
-      <Text style={styles.forecastTime}>
-        {new Date(item.dt * 1000).toLocaleTimeString([], {
-          hour: "2-digit",
-          minute: "2-digit",
-        })}
-      </Text>
       <Text style={styles.forecastDate}>
         {new Date(item.dt * 1000).toLocaleDateString([], {
           day: "numeric",
@@ -35,8 +35,8 @@ const styles = StyleSheet.create({
     color: "#0A3B59",
   },
   forecastItem: {
-    marginRight: 15,
     padding: 10,
+    paddingHorizontal: 20,
     borderRadius: 10,
     alignItems: "center",
     minWidth: 80,
@@ -51,9 +51,10 @@ const styles = StyleSheet.create({
     color: "#0A3B59",
   },
   forecastTime: {
-    fontSize: 12,
+    fontSize: 14,
     marginTop: 2,
     color: "#0A3B59",
+    fontWeight: "bold",
   },
   forecastDate: {
     fontSize: 12,

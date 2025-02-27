@@ -33,7 +33,6 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 16,
     paddingTop: 50,
     backgroundColor: "#F2E4D8",
     width: "100%",
